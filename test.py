@@ -21,8 +21,9 @@ SUMMARY_JSON = response.json()
 print(SUMMARY_JSON.keys())
 a ={"Countries":SUMMARY_JSON["Countries"]}
 b = SUMMARY_JSON["Countries"]
-print(SUMMARY_JSON["Global"].keys())
-# print(a.keys())
+# print(SUMMARY_JSON["Global"].keys())
+print(b[0])
+
 
 # print(a[:5])
 # print(type(SUMMARY_JSON["Countries"]))

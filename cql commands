@@ -1,1 +1,11 @@
-CREATE TABLE global.stats (NewConfirmed int, NewDeaths int, NewRecovered int, TotalConfirmed int, TotalDeaths int, TotalRecovered int);
+CREATE TABLE conv19.stats (ID int PRIMARY KEY ,NewConfirmed int, NewDeaths int, NewRecovered int, TotalConfirmed int, TotalDeaths int, TotalRecovered int);
+COPY conv19.stats(ID,NewConfirmed,NewDeaths,NewRecovered,TotalConfirmed,TotalDeaths,TotalRecovered) FROM '/home/Global.csv' WITH HEADER=TRUE;
+
+CREATE TABLE conv19.Country(Country text PRIMARY KEY, CountryCode text,Slug text, NewConfirmed int, TotalConfirmed int, NewDeaths int, TotalDeaths int, NewRecovered int,TotalRecovered int,Date timestamp);
+COPY conv19.Country(Country,CountryCode,Date, NewConfirmed, NewDeaths, NewRecovered, Slug, TotalConfirmed, TotalDeaths, TotalRecovered) FROM '/home/Country.csv' WITH HEADER=TRUE;
+
+
+{'Country': 'ALA Aland Islands', 'CountryCode': 'AX', 'Slug': 'ala-aland-islands', 'NewConfirmed': 0, 'TotalConfirmed': 0, 'NewDeaths': 0, 'TotalDeaths': 0, 'NewRecovered': 0,
+'TotalRecovered': 0, 'Date': '2020-04-07T15:40:48Z'}
+
+timestamps: 2020-04-05T06:37:00Z
