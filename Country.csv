@@ -1,0 +1,245 @@
+Country,CountryCode,Date,NewConfirmed,NewDeaths,NewRecovered,Slug,TotalConfirmed,TotalDeaths,TotalRecovered
+ALA Aland Islands,AX,2020-04-07T14:04:37Z,0,0,0,ala-aland-islands,0,0,0
+Afghanistan,AF,2020-04-07T14:04:37Z,18,4,3,afghanistan,367,11,18
+Albania,AL,2020-04-07T14:04:37Z,16,1,12,albania,377,21,116
+Algeria,DZ,2020-04-07T14:04:37Z,103,21,0,algeria,1423,173,90
+American Samoa,AS,2020-04-07T14:04:37Z,0,0,0,american-samoa,0,0,0
+Andorra,AD,2020-04-07T14:04:37Z,24,3,5,andorra,525,21,31
+Angola,AO,2020-04-07T14:04:37Z,2,0,0,angola,16,2,2
+Anguilla,AI,2020-04-07T14:04:37Z,0,0,0,anguilla,0,0,0
+Antarctica,AQ,2020-04-07T14:04:37Z,0,0,0,antarctica,0,0,0
+Antigua and Barbuda,AG,2020-04-07T14:04:37Z,0,0,0,antigua-and-barbuda,15,0,0
+Argentina,AR,2020-04-07T14:04:37Z,103,4,45,argentina,1554,48,325
+Armenia,AM,2020-04-07T14:04:37Z,11,1,5,armenia,833,8,62
+Aruba,AW,2020-04-07T14:04:37Z,0,0,0,aruba,0,0,0
+Australia,AU,2020-04-07T14:04:37Z,110,5,323,australia,5797,40,1080
+Austria,AT,2020-04-07T14:04:37Z,246,16,465,austria,12297,220,3463
+Azerbaijan,AZ,2020-04-07T14:04:37Z,57,0,12,azerbaijan,641,7,44
+Bahamas,BS,2020-04-07T14:04:37Z,1,1,4,bahamas,29,5,4
+Bahrain,BH,2020-04-07T14:04:37Z,56,0,27,bahrain,756,4,458
+Bangladesh,BD,2020-04-07T14:04:37Z,35,3,0,bangladesh,123,12,33
+Barbados,BB,2020-04-07T14:04:37Z,4,1,0,barbados,60,2,6
+Belarus,BY,2020-04-07T14:04:37Z,138,5,1,belarus,700,13,53
+Belgium,BE,2020-04-07T14:04:37Z,1123,185,235,belgium,20814,1632,3986
+Belize,BZ,2020-04-07T14:04:37Z,2,1,0,belize,7,1,0
+Benin,BJ,2020-04-07T14:04:37Z,4,1,0,benin,26,1,5
+Bermuda,BM,2020-04-07T14:04:37Z,0,0,0,bermuda,0,0,0
+Bhutan,BT,2020-04-07T14:04:37Z,0,0,0,bhutan,5,0,2
+Bolivia,BO,2020-04-07T14:04:37Z,26,1,0,bolivia,183,11,2
+Bosnia and Herzegovina,BA,2020-04-07T14:04:37Z,20,6,17,bosnia-and-herzegovina,674,29,47
+Botswana,BW,2020-04-07T14:04:37Z,0,0,0,botswana,6,1,0
+Bouvet Island,BV,2020-04-07T14:04:37Z,0,0,0,bouvet-island,0,0,0
+Brazil,BR,2020-04-07T14:04:37Z,1031,78,0,brazil,12161,564,127
+British Indian Ocean Territory,IO,2020-04-07T14:04:37Z,0,0,0,british-indian-ocean-territory,0,0,0
+British Virgin Islands,VG,2020-04-07T14:04:37Z,0,0,0,british-virgin-islands,0,0,0
+Brunei Darussalam,BN,2020-04-07T14:04:37Z,0,0,9,brunei,135,1,82
+Bulgaria,BG,2020-04-07T14:04:37Z,18,2,2,bulgaria,549,22,39
+Burkina Faso,BF,2020-04-07T14:04:37Z,19,1,18,burkina-faso,364,18,108
+Burundi,BI,2020-04-07T14:04:37Z,0,0,0,burundi,3,0,0
+Cambodia,KH,2020-04-07T14:04:37Z,0,0,3,cambodia,114,0,53
+Cameroon,CM,2020-04-07T14:04:37Z,8,0,0,cameroon,658,9,17
+Canada,CA,2020-04-07T14:04:37Z,807,80,244,canada,16563,338,3256
+Cape Verde,CV,2020-04-07T14:04:37Z,0,0,1,cape-verde,7,1,1
+Cayman Islands,KY,2020-04-07T14:04:37Z,0,0,0,cayman-islands,0,0,0
+Central African Republic,CF,2020-04-07T14:04:37Z,0,0,0,central-african-republic,8,0,0
+Chad,TD,2020-04-07T14:04:37Z,0,0,0,chad,9,0,0
+Chile,CL,2020-04-07T14:04:37Z,344,3,110,chile,4815,37,728
+China,CN,2020-04-07T14:04:37Z,63,2,103,china,82665,3335,77310
+Christmas Island,CX,2020-04-07T14:04:37Z,0,0,0,christmas-island,0,0,0
+Cocos (Keeling) Islands,CC,2020-04-07T14:04:37Z,0,0,0,cocos-keeling-islands,0,0,0
+Colombia,CO,2020-04-07T14:04:37Z,94,11,0,colombia,1579,46,88
+Comoros,KM,2020-04-07T14:04:37Z,0,0,0,comoros,0,0,0
+Congo (Brazzaville),CG,2020-04-07T14:04:37Z,0,0,0,congo-brazzaville,45,5,2
+Congo (Kinshasa),CD,2020-04-07T14:04:37Z,7,0,2,congo-kinshasa,161,18,5
+Cook Islands,CK,2020-04-07T14:04:37Z,0,0,0,cook-islands,0,0,0
+Costa Rica,CR,2020-04-07T14:04:37Z,13,0,2,costa-rica,467,2,18
+Croatia,HR,2020-04-07T14:04:37Z,40,1,5,croatia,1222,16,130
+Cuba,CU,2020-04-07T14:04:37Z,30,1,3,cuba,350,9,18
+Cyprus,CY,2020-04-07T14:04:37Z,19,0,8,cyprus,465,9,45
+Czech Republic,CZ,2020-04-07T14:04:37Z,235,11,25,czech-republic,4822,78,121
+Côte d'Ivoire,CI,2020-04-07T14:04:37Z,62,0,4,cote-divoire,323,3,41
+Denmark,DK,2020-04-07T14:04:37Z,314,8,60,denmark,4875,187,1489
+Djibouti,DJ,2020-04-07T14:04:37Z,31,0,0,djibouti,90,0,9
+Dominica,DM,2020-04-07T14:04:37Z,1,0,1,dominica,15,0,1
+Dominican Republic,DO,2020-04-07T14:04:37Z,83,4,16,dominican-republic,1828,86,33
+Ecuador,EC,2020-04-07T14:04:37Z,101,11,0,ecuador,3747,191,100
+Egypt,EG,2020-04-07T14:04:37Z,149,7,12,egypt,1322,85,259
+El Salvador,SV,2020-04-07T14:04:37Z,7,1,3,el-salvador,69,4,5
+Equatorial Guinea,GQ,2020-04-07T14:04:37Z,0,0,2,equatorial-guinea,16,0,3
+Eritrea,ER,2020-04-07T14:04:37Z,2,0,0,eritrea,31,0,0
+Estonia,EE,2020-04-07T14:04:37Z,11,4,0,estonia,1108,19,62
+Ethiopia,ET,2020-04-07T14:04:37Z,1,0,0,ethiopia,44,2,4
+Falkland Islands (Malvinas),FK,2020-04-07T14:04:37Z,0,0,0,falkland-islands-malvinas,0,0,0
+Faroe Islands,FO,2020-04-07T14:04:37Z,0,0,0,faroe-islands,0,0,0
+Fiji,FJ,2020-04-07T14:04:37Z,2,0,0,fiji,14,0,0
+France,FR,2020-04-07T14:04:37Z,5190,833,1079,france,98963,8926,17428
+French Guiana,GF,2020-04-07T14:04:37Z,0,0,0,french-guiana,0,0,0
+French Polynesia,PF,2020-04-07T14:04:37Z,0,0,0,french-polynesia,0,0,0
+French Southern Territories,TF,2020-04-07T14:04:37Z,0,0,0,french-southern-territories,0,0,0
+Gabon,GA,2020-04-07T14:04:37Z,3,0,0,gabon,24,1,1
+Gambia,GM,2020-04-07T14:04:37Z,0,0,0,gambia,4,1,2
+Georgia,GE,2020-04-07T14:04:37Z,14,0,3,georgia,188,2,39
+Germany,DE,2020-04-07T14:04:37Z,3251,226,0,germany,103374,1810,28700
+Ghana,GH,2020-04-07T14:04:37Z,0,0,0,ghana,214,5,31
+Gibraltar,GI,2020-04-07T14:04:37Z,0,0,0,gibraltar,0,0,0
+Greece,GR,2020-04-07T14:04:37Z,20,6,191,greece,1755,79,269
+Greenland,GL,2020-04-07T14:04:37Z,0,0,0,greenland,0,0,0
+Grenada,GD,2020-04-07T14:04:37Z,0,0,0,grenada,12,0,0
+Guadeloupe,GP,2020-04-07T14:04:37Z,0,0,0,guadeloupe,0,0,0
+Guam,GU,2020-04-07T14:04:37Z,0,0,0,guam,0,0,0
+Guatemala,GT,2020-04-07T14:04:37Z,9,1,0,guatemala,70,3,15
+Guernsey,GG,2020-04-07T14:04:37Z,0,0,0,guernsey,0,0,0
+Guinea,GN,2020-04-07T14:04:37Z,7,0,0,guinea,128,0,5
+Guinea-Bissau,GW,2020-04-07T14:04:37Z,0,0,0,guinea-bissau,18,0,0
+Guyana,GY,2020-04-07T14:04:37Z,7,0,8,guyana,31,4,8
+Heard and Mcdonald Islands,HM,2020-04-07T14:04:37Z,0,0,0,heard-and-mcdonald-islands,0,0,0
+Holy See (Vatican City State),VA,2020-04-07T14:04:37Z,0,0,0,holy-see-vatican-city-state,7,0,0
+Honduras,HN,2020-04-07T14:04:37Z,30,0,0,honduras,298,22,6
+"Hong Kong, SAR China",HK,2020-04-07T14:04:37Z,0,0,0,hong-kong-sar-china,0,0,0
+Hungary,HU,2020-04-07T14:04:37Z,11,4,1,hungary,744,38,67
+Iceland,IS,2020-04-07T14:04:37Z,76,2,32,iceland,1562,6,460
+India,IN,2020-04-07T14:04:37Z,1190,37,146,india,4778,136,375
+Indonesia,ID,2020-04-07T14:04:37Z,218,11,28,indonesia,2491,209,192
+"Iran, Islamic Republic of",IR,2020-04-07T14:04:37Z,2274,136,4500,iran,60500,3739,24236
+Iraq,IQ,2020-04-07T14:04:37Z,70,3,65,iraq,1031,64,344
+Ireland,IE,2020-04-07T14:04:37Z,370,16,0,ireland,5364,174,25
+Isle of Man,IM,2020-04-07T14:04:37Z,0,0,0,isle-of-man,0,0,0
+Israel,IL,2020-04-07T14:04:37Z,474,8,108,israel,8904,57,585
+Italy,IT,2020-04-07T14:04:37Z,3599,636,1022,italy,132547,16523,22837
+Jamaica,JM,2020-04-07T14:04:37Z,0,0,0,jamaica,58,3,8
+Japan,JP,2020-04-07T14:04:37Z,515,8,61,japan,3654,85,575
+Jersey,JE,2020-04-07T14:04:37Z,0,0,0,jersey,0,0,0
+Jordan,JO,2020-04-07T14:04:37Z,4,1,16,jordan,349,6,126
+Kazakhstan,KZ,2020-04-07T14:04:37Z,78,0,4,kazakhstan,662,6,46
+Kenya,KE,2020-04-07T14:04:37Z,16,2,0,kenya,158,6,4
+Kiribati,KI,2020-04-07T14:04:37Z,0,0,0,kiribati,0,0,0
+Korea (North),KP,2020-04-07T14:04:37Z,0,0,0,korea-north,0,0,0
+Korea (South),KR,2020-04-07T14:04:37Z,47,3,135,korea-south,10284,186,6598
+Kuwait,KW,2020-04-07T14:04:37Z,109,0,4,kuwait,665,1,103
+Kyrgyzstan,KG,2020-04-07T14:04:37Z,69,3,24,kyrgyzstan,216,4,33
+Lao PDR,LA,2020-04-07T14:04:37Z,1,0,0,lao-pdr,12,0,0
+Latvia,LV,2020-04-07T14:04:37Z,9,0,15,latvia,542,1,16
+Lebanon,LB,2020-04-07T14:04:37Z,14,1,6,lebanon,541,19,60
+Lesotho,LS,2020-04-07T14:04:37Z,0,0,0,lesotho,0,0,0
+Liberia,LR,2020-04-07T14:04:37Z,1,0,0,liberia,14,3,3
+Libya,LY,2020-04-07T14:04:37Z,1,0,1,libya,19,1,1
+Liechtenstein,LI,2020-04-07T14:04:37Z,0,0,55,liechtenstein,77,1,55
+Lithuania,LT,2020-04-07T14:04:37Z,32,2,1,lithuania,843,15,8
+Luxembourg,LU,2020-04-07T14:04:37Z,39,5,0,luxembourg,2843,41,500
+"Macao, SAR China",MO,2020-04-07T14:04:37Z,0,0,0,macao-sar-china,0,0,0
+"Macedonia, Republic of",MK,2020-04-07T14:04:37Z,15,5,7,macedonia,570,23,30
+Madagascar,MG,2020-04-07T14:04:37Z,10,0,0,madagascar,82,0,2
+Malawi,MW,2020-04-07T14:04:37Z,1,0,0,malawi,5,0,0
+Malaysia,MY,2020-04-07T14:04:37Z,131,1,236,malaysia,3793,62,1241
+Maldives,MV,2020-04-07T14:04:37Z,0,0,0,maldives,19,0,13
+Mali,ML,2020-04-07T14:04:37Z,2,0,8,mali,47,5,9
+Malta,MT,2020-04-07T14:04:37Z,14,0,0,malta,241,0,5
+Marshall Islands,MH,2020-04-07T14:04:37Z,0,0,0,marshall-islands,0,0,0
+Martinique,MQ,2020-04-07T14:04:37Z,0,0,0,martinique,0,0,0
+Mauritania,MR,2020-04-07T14:04:37Z,0,0,0,mauritania,6,1,2
+Mauritius,MU,2020-04-07T14:04:37Z,17,0,0,mauritius,244,7,7
+Mayotte,YT,2020-04-07T14:04:37Z,0,0,0,mayotte,0,0,0
+Mexico,MX,2020-04-07T14:04:37Z,253,15,0,mexico,2143,94,633
+"Micronesia, Federated States of",FM,2020-04-07T14:04:37Z,0,0,0,micronesia,0,0,0
+Moldova,MD,2020-04-07T14:04:37Z,101,4,7,moldova,965,19,37
+Monaco,MC,2020-04-07T14:04:37Z,4,0,1,monaco,77,1,4
+Mongolia,MN,2020-04-07T14:04:37Z,1,0,0,mongolia,15,0,2
+Montenegro,ME,2020-04-07T14:04:37Z,19,0,0,montenegro,233,2,1
+Montserrat,MS,2020-04-07T14:04:37Z,0,0,0,montserrat,0,0,0
+Morocco,MA,2020-04-07T14:04:37Z,99,10,5,morocco,1120,80,81
+Mozambique,MZ,2020-04-07T14:04:37Z,0,0,0,mozambique,10,0,1
+Myanmar,MM,2020-04-07T14:04:37Z,1,0,0,myanmar,22,1,0
+Namibia,NA,2020-04-07T14:04:37Z,0,0,0,namibia,16,0,3
+Nauru,NR,2020-04-07T14:04:37Z,0,0,0,nauru,0,0,0
+Nepal,NP,2020-04-07T14:04:37Z,0,0,0,nepal,9,0,1
+Netherlands,NL,2020-04-07T14:04:37Z,973,103,1,netherlands,18926,1874,258
+Netherlands Antilles,AN,2020-04-07T14:04:37Z,0,0,0,netherlands-antilles,0,0,0
+New Caledonia,NC,2020-04-07T14:04:37Z,0,0,0,new-caledonia,0,0,0
+New Zealand,NZ,2020-04-07T14:04:37Z,67,0,20,new-zealand,1106,1,176
+Nicaragua,NI,2020-04-07T14:04:37Z,0,0,0,nicaragua,6,1,0
+Niger,NE,2020-04-07T14:04:37Z,69,0,13,niger,253,10,26
+Nigeria,NG,2020-04-07T14:04:37Z,6,0,2,nigeria,238,5,35
+Niue,NU,2020-04-07T14:04:37Z,0,0,0,niue,0,0,0
+Norfolk Island,NF,2020-04-07T14:04:37Z,0,0,0,norfolk-island,0,0,0
+Northern Mariana Islands,MP,2020-04-07T14:04:37Z,0,0,0,northern-mariana-islands,0,0,0
+Norway,NO,2020-04-07T14:04:37Z,178,5,0,norway,5865,76,32
+Oman,OM,2020-04-07T14:04:37Z,33,0,0,oman,331,2,61
+Pakistan,PK,2020-04-07T14:04:37Z,609,6,48,pakistan,3766,53,259
+Palau,PW,2020-04-07T14:04:37Z,0,0,0,palau,0,0,0
+Panama,PA,2020-04-07T14:04:37Z,187,8,0,panama,1988,54,13
+Papua New Guinea,PG,2020-04-07T14:04:37Z,1,0,0,papua-new-guinea,2,0,0
+Paraguay,PY,2020-04-07T14:04:37Z,9,2,0,paraguay,113,5,12
+Peru,PE,2020-04-07T14:04:37Z,280,9,8,peru,2561,92,997
+Philippines,PH,2020-04-07T14:04:37Z,414,11,9,philippines,3660,163,73
+Pitcairn,PN,2020-04-07T14:04:37Z,0,0,0,pitcairn,0,0,0
+Poland,PL,2020-04-07T14:04:37Z,311,13,28,poland,4413,107,162
+Portugal,PT,2020-04-07T14:04:37Z,452,16,65,portugal,11730,311,140
+Puerto Rico,PR,2020-04-07T14:04:37Z,0,0,0,puerto-rico,0,0,0
+Qatar,QA,2020-04-07T14:04:37Z,228,0,8,qatar,1832,4,131
+Republic of Kosovo,XK,2020-04-07T14:04:37Z,0,0,0,kosovo,145,1,23
+Romania,RO,2020-04-07T14:04:37Z,193,25,32,romania,4057,176,406
+Russian Federation,RU,2020-04-07T14:04:37Z,954,2,51,russia,6343,47,406
+Rwanda,RW,2020-04-07T14:04:37Z,1,0,0,rwanda,105,0,4
+Réunion,RE,2020-04-07T14:04:37Z,0,0,0,réunion,0,0,0
+Saint Helena,SH,2020-04-07T14:04:37Z,0,0,0,saint-helena,0,0,0
+Saint Kitts and Nevis,KN,2020-04-07T14:04:37Z,0,0,0,saint-kitts-and-nevis,10,0,0
+Saint Lucia,LC,2020-04-07T14:04:37Z,0,0,0,saint-lucia,14,0,1
+Saint Pierre and Miquelon,PM,2020-04-07T14:04:37Z,0,0,0,saint-pierre-and-miquelon,0,0,0
+Saint Vincent and Grenadines,VC,2020-04-07T14:04:37Z,0,0,0,saint-vincent-and-the-grenadines,7,0,1
+Saint-Barthélemy,BL,2020-04-07T14:04:37Z,0,0,0,saint-barthélemy,0,0,0
+Saint-Martin (French part),MF,2020-04-07T14:04:37Z,0,0,0,saint-martin-french-part,0,0,0
+Samoa,WS,2020-04-07T14:04:37Z,0,0,0,samoa,0,0,0
+San Marino,SM,2020-04-07T14:04:37Z,0,0,0,san-marino,266,32,35
+Sao Tome and Principe,ST,2020-04-07T14:04:37Z,0,0,0,sao-tome-and-principe,0,0,0
+Saudi Arabia,SA,2020-04-07T14:04:37Z,203,4,63,saudi-arabia,2605,38,551
+Senegal,SN,2020-04-07T14:04:37Z,4,0,10,senegal,226,2,92
+Serbia,RS,2020-04-07T14:04:37Z,292,7,0,serbia,2200,58,0
+Seychelles,SC,2020-04-07T14:04:37Z,1,0,0,seychelles,11,0,0
+Sierra Leone,SL,2020-04-07T14:04:37Z,0,0,0,sierra-leone,6,0,0
+Singapore,SG,2020-04-07T14:04:37Z,66,0,24,singapore,1375,6,344
+Slovenia,SI,2020-04-07T14:04:37Z,24,2,23,slovenia,1021,30,102
+Solomon Islands,SB,2020-04-07T14:04:37Z,0,0,0,solomon-islands,0,0,0
+Somalia,SO,2020-04-07T14:04:37Z,0,0,0,somalia,7,0,1
+South Africa,ZA,2020-04-07T14:04:37Z,31,1,0,south-africa,1686,12,95
+South Georgia and the South Sandwich Islands,GS,2020-04-07T14:04:37Z,0,0,0,south-georgia-and-the-south-sandwich-islands,0,0,0
+South Sudan,SS,2020-04-07T14:04:37Z,0,0,0,south-sudan,0,0,0
+Spain,ES,2020-04-07T14:04:37Z,5029,700,2357,spain,136675,13341,40437
+Sri Lanka,LK,2020-04-07T14:04:37Z,2,0,5,sri-lanka,178,5,38
+Sudan,SD,2020-04-07T14:04:37Z,0,0,0,sudan,12,2,2
+Suriname,SR,2020-04-07T14:04:37Z,0,0,0,suriname,10,1,0
+Svalbard and Jan Mayen Islands,SJ,2020-04-07T14:04:37Z,0,0,0,svalbard-and-jan-mayen-islands,0,0,0
+Swaziland,SZ,2020-04-07T14:04:37Z,1,0,4,swaziland,10,0,4
+Sweden,SE,2020-04-07T14:04:37Z,376,76,0,sweden,7206,477,205
+Switzerland,CH,2020-04-07T14:04:37Z,557,50,1641,switzerland,21657,765,8056
+Syrian Arab Republic (Syria),SY,2020-04-07T14:04:37Z,0,0,0,syria,19,2,2
+"Taiwan, Republic of China",TW,2020-04-07T14:04:37Z,10,0,7,taiwan,373,5,57
+Tajikistan,TJ,2020-04-07T14:04:37Z,0,0,0,tajikistan,0,0,0
+"Tanzania, United Republic of",TZ,2020-04-07T14:04:37Z,2,0,0,tanzania,24,1,3
+Thailand,TH,2020-04-07T14:04:37Z,51,3,0,thailand,2220,26,793
+Timor-Leste,TL,2020-04-07T14:04:37Z,0,0,0,timor-leste,1,0,0
+Togo,TG,2020-04-07T14:04:37Z,14,0,3,togo,58,3,23
+Tokelau,TK,2020-04-07T14:04:37Z,0,0,0,tokelau,0,0,0
+Tonga,TO,2020-04-07T14:04:37Z,0,0,0,tonga,0,0,0
+Trinidad and Tobago,TT,2020-04-07T14:04:37Z,1,1,0,trinidad-and-tobago,105,8,1
+Tunisia,TN,2020-04-07T14:04:37Z,22,0,0,tunisia,596,22,5
+Turkey,TR,2020-04-07T14:04:37Z,3148,75,284,turkey,30217,649,1326
+Turkmenistan,TM,2020-04-07T14:04:37Z,0,0,0,turkmenistan,0,0,0
+Turks and Caicos Islands,TC,2020-04-07T14:04:37Z,0,0,0,turks-and-caicos-islands,0,0,0
+Tuvalu,TV,2020-04-07T14:04:37Z,0,0,0,tuvalu,0,0,0
+US Minor Outlying Islands,UM,2020-04-07T14:04:37Z,0,0,0,us-minor-outlying-islands,0,0,0
+Uganda,UG,2020-04-07T14:04:37Z,0,0,0,uganda,52,0,0
+Ukraine,UA,2020-04-07T14:04:37Z,11,1,0,ukraine,1319,38,28
+United Arab Emirates,AE,2020-04-07T14:04:37Z,277,1,23,united-arab-emirates,2076,11,167
+United Kingdom,GB,2020-04-07T14:04:37Z,3843,442,58,united-kingdom,52279,5385,287
+United States of America,US,2020-04-07T14:04:37Z,29542,1164,2133,united-states,366607,10783,19581
+Uruguay,UY,2020-04-07T14:04:37Z,6,1,11,uruguay,406,6,104
+Uzbekistan,UZ,2020-04-07T14:04:37Z,115,0,0,uzbekistan,457,2,30
+Vanuatu,VU,2020-04-07T14:04:37Z,0,0,0,vanuatu,0,0,0
+Venezuela (Bolivarian Republic),VE,2020-04-07T14:04:37Z,6,0,13,venezuela,165,7,65
+Viet Nam,VN,2020-04-07T14:04:37Z,4,0,5,vietnam,245,0,95
+"Virgin Islands, US",VI,2020-04-07T14:04:37Z,0,0,0,virgin-islands,0,0,0
+Wallis and Futuna Islands,WF,2020-04-07T14:04:37Z,0,0,0,wallis-and-futuna-islands,0,0,0
+Western Sahara,EH,2020-04-07T14:04:37Z,0,0,0,western-sahara,4,0,0
+Yemen,YE,2020-04-07T14:04:37Z,0,0,0,yemen,0,0,0
+Zambia,ZM,2020-04-07T14:04:37Z,0,0,2,zambia,39,1,5
+Zimbabwe,ZW,2020-04-07T14:04:37Z,1,0,0,zimbabwe,10,1,0

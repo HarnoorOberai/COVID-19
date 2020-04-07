@@ -39,11 +39,8 @@ def get_conv19_summaryByCountry():
     payload ={}
     response = requests.request("GET", url, headers=headers, data = payload)
     SUMMARY_JSON = response.json()
-    COUNTRIES_JSON = {"Countries":SUMMARY_JSON["Countries"]}
+    COUNTRIES_JSON = {"Countries" : SUMMARY_JSON["Countries"]}
     return COUNTRIES_JSON
-
-
-
 
 
 if __name__ == '__main__':

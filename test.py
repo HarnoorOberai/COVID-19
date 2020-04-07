@@ -20,7 +20,9 @@ response = requests.request("GET", url, headers=headers, data = payload)
 SUMMARY_JSON = response.json()
 print(SUMMARY_JSON.keys())
 a ={"Countries":SUMMARY_JSON["Countries"]}
-print(type(a))
+b = SUMMARY_JSON["Countries"]
+print(SUMMARY_JSON["Global"].keys())
+# print(a.keys())
 
 # print(a[:5])
 # print(type(SUMMARY_JSON["Countries"]))
