@@ -1,0 +1,1 @@
+CREATE TABLE global.stats (NewConfirmed int, NewDeaths int, NewRecovered int, TotalConfirmed int, TotalDeaths int, TotalRecovered int);
