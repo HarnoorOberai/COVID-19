@@ -1,10 +1,3 @@
-1. make cassandra image
-2. make cassandra container from the image
-3. Start the cassandra-contaier
-4. copy .csv file to cassandra contaier
-        miniProject$ sudo docker cp Country.csv cassandra-test:/home/Country.csv
-        miniProject$ sudo docker cp Global.csv cassandra-test:/home/Global.csv
-
 DESC conv19
 
 CREATE KEYSPACE conv19 WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
@@ -37,5 +30,6 @@ FROM '/home/Global.csv' WITH HEADER=TRUE;
 
 COPY conv19.Country(Country,CountryCode,Date, NewConfirmed, NewDeaths, NewRecovered, Slug, TotalConfirmed, TotalDeaths, TotalRecovered)
 FROM '/home/Country.csv' WITH HEADER=TRUE;
+
 
 
