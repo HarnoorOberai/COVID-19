@@ -121,7 +121,6 @@ def addCountry():
     Country = request.json['Country']
     CountryCode = request.json['CountryCode']
     Date = datetime.datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
-    # print(Date)
     NewConfirmed = request.json['NewConfirmed']
     NewDeaths = request.json['NewDeaths']
     NewRecovered = request.json['NewRecovered']
@@ -132,17 +131,20 @@ def addCountry():
 
     result = session.execute("""select count(*) from conv19.Country where Country='{}'""".format(Country))
     if result.was_applied == 0:
-        query = """INSERT into conv19.Country(Country,CountryCode,Date,NewConfirmed,NewDeaths,NewRecovered,Slug,TotalConfirmed,TotalDeaths,TotalRecovered) 
+        queryAddCountry = """INSERT into conv19.Country(Country,CountryCode,Date,NewConfirmed,NewDeaths,NewRecovered,Slug,TotalConfirmed,TotalDeaths,TotalRecovered) 
         VALUES ('{}', '{}','{}', {},{}, {},'{}', {},{}, {})
         """.format(Country, CountryCode, Date, NewConfirmed, NewDeaths, NewRecovered, Slug, TotalConfirmed, TotalDeaths,
                    TotalRecovered)
-        session.execute(query)
+        session.execute(queryAddCountry)
 
+        queryUpdateGlobal = """UPDATE conv19.global SET NewConfirmed = NewConfirmed + {}, NewDeaths = NewDeaths + {}, NewRecovered = NewRecovered +{}, TotalConfirmed = TotalConfirmed+ {}, 
+        TotalDeaths = TotalDeaths +{}, TotalRecovered = TotalRecovered+ {} WHERE Id = 1
+        """.format(NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered)
+        session.execute(queryUpdateGlobal)
         return "Success", 201
 
     else:
-        abort(406)
-
+        abort(406, description="The country already exist in the database")
 
 @app.errorhandler(404)
 def resource_not_found(e):
@@ -153,6 +155,9 @@ def resource_not_found(e):
 def resource_not_found(e):
     return jsonify(error=str(e)), 400
 
+@app.errorhandler(406)
+def not_acceptable(e):
+    return jsonify(error=str(e)), 406
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
