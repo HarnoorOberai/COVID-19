@@ -23,10 +23,12 @@ import json
 # b = SUMMARY_JSON["Countries"]
 # # print(SUMMARY_JSON["Global"].keys())
 # print(b[0])
-name = 'harnoor'
-name = '"' + name + '"'
-print(name)
-
+name = ("United Kingdom of London",)
+# x =name[0]
+x = (name[0].lower().replace(' ', '-'),)
+print(type(x),x)
+#
+# print(type(x),type(name))
 
 # print(a[:5])
 # print(type(SUMMARY_JSON["Countries"]))

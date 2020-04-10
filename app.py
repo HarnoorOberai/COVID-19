@@ -1,7 +1,8 @@
 import requests
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response, abort
 import requests_cache
 from cassandra.cluster import Cluster
+import datetime
 
 # cluster = Cluster(contact_points=['172.17.0.2'], port=9042)
 cluster = Cluster(contact_points=['127.0.0.1'], port=9042)
@@ -16,12 +17,14 @@ COUNTRIES_JSON = {}
 app = Flask(__name__)
 
 
+# Inital call
 @app.route('/')
 def hello():
     return ('<h1>Welcome Conv19 API</h1>')
 
 
 # make call to external API
+# Summary information : Includes country stats and global stats
 @app.route('/summary', methods=['GET'])
 def get_conv19_summary():
     url = "https://api.covid19api.com/summary"
@@ -35,6 +38,7 @@ def get_conv19_summary():
         print(response.reason)
 
 
+# Summary about Total Global Stats
 @app.route('/summary/global', methods=['GET'])
 def get_conv19_summaryGlobalCount():
     url = "https://api.covid19api.com/summary"
@@ -49,6 +53,7 @@ def get_conv19_summaryGlobalCount():
         print(response.reason)
 
 
+# All the Country Stats
 @app.route('/summary/country', methods=['GET'])
 def get_conv19_summaryAllCountryCount():
     url = "https://api.covid19api.com/summary"
@@ -63,6 +68,7 @@ def get_conv19_summaryAllCountryCount():
         print(response.ok)
 
 
+# Specific Country Stats
 @app.route('/summary/country/<name>', methods=['GET'])
 def get_conv19_summaryByCountry(name):
     print(""" SELECT * FROM conv19.Country where Country = '{}'""".format(name))
@@ -84,12 +90,68 @@ def get_conv19_summaryByCountry(name):
             }
         )
     if len(result) == 0:
-        return '<h1>Check spelling!!!</h1>'
-    return jsonify(result)
+        abort(404, description="No such country or check country spellings")
+    return jsonify(result), 200
 
 
+# Adding a Country as Post Request
+# request json of type
+# Country,
+# CountryCode,
+# Date,
+# NewConfirmed,
+# NewDeaths,
+# NewRecovered,
+# slug,
+# TotalConfirmed,
+# TotalDeaths,
+# TotalRecovered
+@app.route('/summary/country', methods=['POST'])
+def addCountry():
+    if not request.json or not 'Country' in request.json \
+            or not 'CountryCode' in request.json \
+            or not 'NewConfirmed' in request.json \
+            or not 'NewDeaths' in request.json \
+            or not 'NewRecovered' in request.json \
+            or not 'TotalConfirmed' in request.json \
+            or not 'TotalDeaths' in request.json \
+            or not 'TotalRecovered' in request.json:
+        abort(400, 'Bad Request. Check your parameters')
+
+    Country = request.json['Country']
+    CountryCode = request.json['CountryCode']
+    Date = datetime.datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
+    # print(Date)
+    NewConfirmed = request.json['NewConfirmed']
+    NewDeaths = request.json['NewDeaths']
+    NewRecovered = request.json['NewRecovered']
+    Slug = Country.lower().replace(' ', '-')
+    TotalConfirmed = request.json['TotalConfirmed']
+    TotalDeaths = request.json['TotalDeaths']
+    TotalRecovered = request.json['TotalRecovered']
+
+    result = session.execute("""select count(*) from conv19.Country where Country='{}'""".format(Country))
+    if result.was_applied == 0:
+        query = """INSERT into conv19.Country(Country,CountryCode,Date,NewConfirmed,NewDeaths,NewRecovered,Slug,TotalConfirmed,TotalDeaths,TotalRecovered) 
+        VALUES ('{}', '{}','{}', {},{}, {},'{}', {},{}, {})
+        """.format(Country, CountryCode, Date, NewConfirmed, NewDeaths, NewRecovered, Slug, TotalConfirmed, TotalDeaths,
+                   TotalRecovered)
+        session.execute(query)
+
+        return "Success", 201
+
+    else:
+        abort(406)
 
 
+@app.errorhandler(404)
+def resource_not_found(e):
+    return jsonify(error=str(e)), 404
+
+
+@app.errorhandler(400)
+def resource_not_found(e):
+    return jsonify(error=str(e)), 400
 
 
 if __name__ == '__main__':

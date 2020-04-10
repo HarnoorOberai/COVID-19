@@ -10,26 +10,26 @@ DESC conv19
 CREATE KEYSPACE conv19 WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
 
 CREATE TABLE conv19.country (
-    country text PRIMARY KEY,
-    countrycode text,
-    date timestamp,
-    newconfirmed int,
-    newdeaths int,
-    newrecovered int,
-    slug text,
-    totalconfirmed int,
-    totaldeaths int,
-    totalrecovered int
+    Country text PRIMARY KEY,
+    CountryCode text,
+    Date date,
+    NewConfirmed int,
+    NewDeaths int,
+    NewRecovered int,
+    Slug text,
+    TotalConfirmed int,
+    TotalDeaths int,
+    TotalRecovered int
 ) ;
 
 CREATE TABLE conv19.stats (
-    id int PRIMARY KEY,
-    newconfirmed int,
-    newdeaths int,
-    newrecovered int,
-    totalconfirmed int,
-    totaldeaths int,
-    totalrecovered int
+    Id int PRIMARY KEY,
+    NewConfirmed int,
+    NewDeaths int,
+    NewRecovered int,
+    TotalConfirmed int,
+    TotalDeaths int,
+    TotalRecovered int
 );
 
 COPY conv19.stats(ID,NewConfirmed,NewDeaths,NewRecovered,TotalConfirmed,TotalDeaths,TotalRecovered)
