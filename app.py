@@ -23,7 +23,7 @@ def hello():
     return ('<h1>Welcome Conv19 API</h1>')
 
 
-# make call to external API
+# External API call
 # Summary information : Includes country stats and global stats
 @app.route('/summary', methods=['GET'])
 def get_conv19_summary():
@@ -32,12 +32,13 @@ def get_conv19_summary():
     payload = {}
     response = requests.request("GET", url, headers=headers, data=payload)
     if response.ok:
+        global SUMMARY_JSON
         SUMMARY_JSON = response.json()
         return SUMMARY_JSON
     else:
         print(response.reason)
 
-
+# External API call
 # Summary about Total Global Stats
 @app.route('/summary/global', methods=['GET'])
 def get_conv19_summaryGlobalCount():
@@ -51,9 +52,12 @@ def get_conv19_summaryGlobalCount():
         return GLOBAL_JSON
     else:
         print(response.reason)
+    # GLOBAL_JSON = SUMMARY_JSON["Global"]
+    # return GLOBAL_JSON
 
 
-# All the Country Stats
+# All the Countries Stats
+# External API Call
 @app.route('/summary/country', methods=['GET'])
 def get_conv19_summaryAllCountryCount():
     url = "https://api.covid19api.com/summary"
@@ -145,6 +149,25 @@ def addCountry():
 
     else:
         abort(406, description="The country already exist in the database")
+
+
+# @app.route('/summary/country/<name>', methods=['PUT'])
+# def updateCountry():
+#     #  check if country exist
+#     if not request.json:
+#         abort(400, 'Bad Request. Check your parameters')
+#     if 'CountryCode' in request.json and type(request.json['title']) != unicode:
+#         abort(400)
+#     if 'NewConfirmed' in request.json and type(request.json['NewConfirmed']) is not unicode:
+#         abort(400)
+#     if 'done' in request.json and type(request.json['done']) is not bool:
+#         abort(400)
+
+# [{"Country":"United Kingdom","CountryCode":"GB","Date":"Tue, 07 Apr 2020 00:00:00 GMT","NewConfirmed":3843,"NewDeaths":442,"NewRecovered":58,"
+# Slug":"united-kingdom","TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}]
+
+
+
 
 @app.errorhandler(404)
 def resource_not_found(e):
