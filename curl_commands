@@ -1,2 +1,17 @@
 //post request
 curl -i -H "Content-Type: application/json" -X POST -d '{"Country":"Test Country","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' http://0.0.0.0:80/summary/country
+
+//put
+curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewDeaths":101,"NewRecovered":101,"TotalConfirmed":101,
+"TotalDeaths":101,"TotalRecovered":101}' http://0.0.0.0:80/summary/country/Test%20Country
+
+
+Country = request.json['Country']
+    # CountryCode = request.json['CountryCode']
+    Date = getDateTimeStamp()
+    NewConfirmed = request.json['NewConfirmed']
+    NewDeaths = request.json['NewDeaths']
+    NewRecovered = request.json['NewRecovered']
+    TotalConfirmed = request.json['TotalConfirmed']
+    TotalDeaths = request.json['TotalDeaths']
+    TotalRecovered = request.json['TotalRecovered']

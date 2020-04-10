@@ -8,6 +8,9 @@
 # response = requests.request("POST", url, headers=headers, data = payload)
 #
 # print(response.text.encode('utf8'))
+def ADDD(a, b):
+    return a + b
+
 
 import requests
 import json
@@ -26,7 +29,7 @@ import json
 name = ("United Kingdom of London",)
 # x =name[0]
 x = (name[0].lower().replace(' ', '-'),)
-print(type(x),x)
+print(type(x), x)
 #
 # print(type(x),type(name))
 
