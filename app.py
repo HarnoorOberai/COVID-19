@@ -213,6 +213,37 @@ def updateCountry(name):
         return "Success", 201
 
 
+@app.route('/summary/country/<Country>', methods=['DELETE'])
+def deleteCountry(Country):
+
+    print("hello")
+    results = session.execute(""" SELECT * FROM conv19.Country where Country = '{}'""".format(Country))
+    if len(results.current_rows) == 0:
+        abort(404, description="{} does not exist.".format(Country))
+    # update Global table
+    r = results.one()
+    OrignalNewConfirmed = r.newconfirmed
+    OrignalNewDeaths = r.newdeaths
+    OrignalNewRecovered = r.newrecovered
+    OrignalTotalConfirmed = r.totalconfirmed
+    OrignalTotalDeaths = r.totaldeaths
+    OrignalTotalRecovered = r.totalrecovered
+
+    # Updating Global table
+    queryUpdateGlobal = """UPDATE conv19.global SET NewConfirmed = NewConfirmed - {}, NewDeaths = NewDeaths - {}, NewRecovered = NewRecovered -{}, TotalConfirmed = TotalConfirmed- {}, 
+                    TotalDeaths = TotalDeaths -{}, TotalRecovered = TotalRecovered - {} WHERE Id = 1
+                    """.format(OrignalNewConfirmed, OrignalNewDeaths, OrignalNewRecovered, OrignalTotalConfirmed,
+                               OrignalTotalDeaths, OrignalTotalRecovered)
+    # print(queryUpdateGlobal)
+    session.execute(queryUpdateGlobal)
+
+    # Delete the country
+    session.execute("DELETE from conv19.Country where Country = '{}'".format(Country))
+
+    return "Success", 201
+
+
+
 @app.errorhandler(404)
 def resource_not_found(e):
     return jsonify(error=str(e)), 404

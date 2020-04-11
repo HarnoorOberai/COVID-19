@@ -5,6 +5,9 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"Country":"Test Country
 curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewDeaths":101,"NewRecovered":101,"TotalConfirmed":101,
 "TotalDeaths":101,"TotalRecovered":101}' http://0.0.0.0:80/summary/country/Test%20Country
 
+//
+curl -X DELETE http://0.0.0.0:80/summary/country/Test%20Country
+curl --location --request DELETE 'http://0.0.0.0:80/summary/country/Test%20Country'
 
 Country = request.json['Country']
     # CountryCode = request.json['CountryCode']
