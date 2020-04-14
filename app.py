@@ -143,6 +143,9 @@ def get_conv19_summaryByCountry(name):
         abort(404, description="No such country or check country spellings")
     return jsonify(result), 200
 
+@app.route('/curlCommands')
+def curlCommands():
+    return render_template("curlCommands.html")
 
 # Adding a Country as Post Request
 # request json of type
