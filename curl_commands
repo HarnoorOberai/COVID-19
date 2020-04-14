@@ -7,7 +7,7 @@ curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewD
 
 //
 curl -X DELETE http://0.0.0.0:80/summary/country/Test%20Country
-curl --location --request DELETE 'http://0.0.0.0:80/summary/country/Test%20Country'
+
 
 Country = request.json['Country']
     # CountryCode = request.json['CountryCode']

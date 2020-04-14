@@ -37,3 +37,6 @@ print(type(x), x)
 # print(type(SUMMARY_JSON["Countries"]))
 # print(type(SUMMARY_JSON["Global"]))
 # r.json()
+
+
+Countries = {'a':'1', 'b':'2', 'c':'3'}
