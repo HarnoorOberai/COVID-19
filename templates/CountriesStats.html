@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Countries Stats{% endblock %}
+{% block content %}
+<body>
+    <table class="table" id="countries_stats">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Country</th>
+          <th scope="col">CountryCode</th>
+          <th scope="col">Date</th>
+          <th scope="col">NewConfirmed</th>
+          <th scope="col">NewDeaths</th>
+          <th scope="col">NewRecovered</th>
+          <th scope="col">Slug</th>
+          <th scope="col">TotalConfirmed</th>
+          <th scope="col">TotalDeaths</th>
+          <th scope="col">TotalRecovered</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+        {% for country in COUNTRIES_JSON %}
+          <tr>
+            <td>{{loop.index}}</td>
+            <td>{{ country["Country"]}}</td>
+            <td>{{ country["CountryCode"]}}</td>
+            <td>{{ country["Date"]}}</td>
+            <td>{{ country["NewConfirmed"]}}</td>
+            <td>{{ country["NewDeaths"]}}</td>
+            <td>{{ country["NewRecovered"]}}</td>
+            <td>{{ country["Slug"]}}</td>
+            <td>{{ country["TotalConfirmed"]}}</td>
+            <td>{{ country["TotalDeaths"]}}</td>
+            <td>{{ country["TotalRecovered"]}}</td>
+          </tr>
+        {% endfor %}
+    </table>
+</body>
+
+
+
+{% endblock %}

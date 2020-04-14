@@ -1,5 +1,5 @@
 import requests
-from flask import Flask, request, jsonify, make_response, abort
+from flask import Flask, request, jsonify, make_response, abort, render_template
 import requests_cache
 from cassandra.cluster import Cluster
 import datetime
@@ -21,7 +21,7 @@ app = Flask(__name__)
 # Inital call
 @app.route('/')
 def hello():
-    return ('<h1>Welcome Conv19 API</h1>')
+    return render_template("index.html", content_year="2020")
 
 
 # External API call
@@ -42,7 +42,7 @@ def get_conv19_summary():
 
 # External API call
 # Summary about Total Global Stats
-@app.route('/summary/global', methods=['GET'])
+@app.route('/summary/globalByExternalAPI', methods=['GET'])
 def get_conv19_summaryGlobalCount():
     url = "https://api.covid19api.com/summary"
     headers = {}
@@ -54,13 +54,11 @@ def get_conv19_summaryGlobalCount():
         return GLOBAL_JSON
     else:
         print(response.reason)
-    # GLOBAL_JSON = SUMMARY_JSON["Global"]
-    # return GLOBAL_JSON
 
 
 # All the Countries Stats
-# External API Call
-@app.route('/summary/country', methods=['GET'])
+# External API Call : GET
+@app.route('/summary/countryByExternalAPI', methods=['GET'])
 def get_conv19_summaryAllCountryCount():
     url = "https://api.covid19api.com/summary"
     headers = {}
@@ -73,12 +71,57 @@ def get_conv19_summaryAllCountryCount():
     else:
         print(response.ok)
 
+# All global stats using Cassandra db
+@app.route('/summary/globalByBrowser', methods=['GET'])
+def get_conv19_Browser_summaryGlobalCount():
+    rows = session.execute(""" SELECT * FROM conv19.global where id = 1 """)
+    r = rows.one()
+    result = []
+
+    result.append(
+        {
+            "NewConfirmed": r.newconfirmed,
+            "NewDeaths": r.newdeaths,
+            "NewRecovered": r.newrecovered,
+            "TotalConfirmed": r.totalconfirmed,
+            "TotalDeaths": r.totaldeaths,
+            "TotalRecovered": r.totalrecovered
+        })
+    if len(result) == 0:
+        abort(404, description="No such country or check country spellings")
+
+    return render_template("GlobalStats.html", GLOBAL_JSON=result)
+
+
+# All countries list Using Cassandra Db
+@app.route('/summary/countryByBrowser', methods=['GET'])
+def get_conv19_Browser_summaryAllCountryCount():
+    rows = session.execute(""" SELECT * FROM conv19.Country""")
+    result = []
+    for r in rows:
+        result.append(
+            {
+                'Country': r.country,
+                'CountryCode': r.countrycode,
+                'Date': r.date,
+                'NewConfirmed': r.newconfirmed,
+                'NewDeaths': r.newdeaths,
+                'NewRecovered': r.newrecovered,
+                'Slug': r.slug,
+                'TotalConfirmed': r.totalconfirmed,
+                'TotalDeaths': r.totaldeaths,
+                'TotalRecovered': r.totalrecovered
+            }
+        )
+    if len(result) == 0:
+        abort(404, description="No such country or check country spellings")
+
+    return render_template("CountriesStats.html", COUNTRIES_JSON=result)
+
 
 # Specific Country Stats
 @app.route('/summary/country/<name>', methods=['GET'])
 def get_conv19_summaryByCountry(name):
-    # print(ADDD(1, 3))
-    # print(""" SELECT * FROM conv19.Country where Country = '{}'""".format(name))
     rows = session.execute(""" SELECT * FROM conv19.Country where Country = '{}'""".format(name))
     result = []
     for r in rows:
@@ -100,6 +143,9 @@ def get_conv19_summaryByCountry(name):
         abort(404, description="No such country or check country spellings")
     return jsonify(result), 200
 
+@app.route('/curlCommands')
+def curlCommands():
+    return render_template("curlCommands.html")
 
 # Adding a Country as Post Request
 # request json of type
@@ -200,7 +246,7 @@ def updateCountry(name):
         session.execute(queryUpdateGlobal)
 
         queryToUpdateCountry = """UPDATE conv19.Country SET Date = toTimestamp(now()), NewConfirmed = {} , NewDeaths = {}, NewRecovered = {}, TotalConfirmed = {}, TotalDeaths = {}, TotalRecovered={} WHERE Country='{}'""" \
-            .format( NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered,Country)
+            .format(NewConfirmed, NewDeaths, NewRecovered, TotalConfirmed, TotalDeaths, TotalRecovered, Country)
         # print("queryToUpdateCountry :", queryToUpdateCountry)
         session.execute(queryToUpdateCountry)
 
@@ -215,7 +261,6 @@ def updateCountry(name):
 
 @app.route('/summary/country/<Country>', methods=['DELETE'])
 def deleteCountry(Country):
-
     print("hello")
     results = session.execute(""" SELECT * FROM conv19.Country where Country = '{}'""".format(Country))
     if len(results.current_rows) == 0:
@@ -243,7 +288,6 @@ def deleteCountry(Country):
     return "Success", 201
 
 
-
 @app.errorhandler(404)
 def resource_not_found(e):
     return jsonify(error=str(e)), 404
@@ -260,4 +304,4 @@ def not_acceptable(e):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=80, debug=True)

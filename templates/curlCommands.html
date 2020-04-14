@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}curl Commands{% endblock %}
+{% block content %}
+<ul>
+    <li><h4>Post Request:</h4><h6> curl -i -H "Content-Type: application/json" -X POST -d '{"Country":"TestCountry","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' http://0.0.0.0:80/summary/country</h6></li>
+    <li><h4>Put Request:</h4><h6> curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewDeaths":101,"NewRecovered":101,"TotalConfirmed":101, "TotalDeaths":101,"TotalRecovered":101}' http://0.0.0.0:80/summary/country/TestCountry</h6></li>
+    <li><h4>Delete Request:</h4><h6> curl -X DELETE http://0.0.0.0:80/summary/country/TestCountry</h6></li>
+    <li><h4>Get Request:</h4><h6>curl -v http://0.0.0.0:80//summary/country/TestCountrycurl -i -H "Content-Type: application/json" -X POST -d '{"Country":"TestCountry","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' http://0.0.0.0:80/summary/country</h6></li>
+</ul>
+
+{% endblock %}

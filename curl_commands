@@ -7,14 +7,5 @@ curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewD
 
 //
 curl -X DELETE http://0.0.0.0:80/summary/country/Test%20Country
-curl --location --request DELETE 'http://0.0.0.0:80/summary/country/Test%20Country'
 
-Country = request.json['Country']
-    # CountryCode = request.json['CountryCode']
-    Date = getDateTimeStamp()
-    NewConfirmed = request.json['NewConfirmed']
-    NewDeaths = request.json['NewDeaths']
-    NewRecovered = request.json['NewRecovered']
-    TotalConfirmed = request.json['TotalConfirmed']
-    TotalDeaths = request.json['TotalDeaths']
-    TotalRecovered = request.json['TotalRecovered']
+curl -v http://0.0.0.0:80//summary/country/China
