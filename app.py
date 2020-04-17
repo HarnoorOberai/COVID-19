@@ -5,8 +5,8 @@ from cassandra.cluster import Cluster
 import datetime
 from helpfulFunction import *
 
-# cluster = Cluster(contact_points=['172.17.0.2'], port=9042)
-cluster = Cluster(contact_points=['127.0.0.1'], port=9042)
+cluster = Cluster(contact_points=['172.17.0.2'], port=9042)
+# cluster = Cluster(contact_points=['127.0.0.1'], port=9042)
 session = cluster.connect()
 
 requests_cache.install_cache('conv19', backend='sqlite', expire_after=36000)

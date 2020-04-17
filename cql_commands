@@ -1,9 +1,12 @@
+sudo docker pull cassandra:latest
+
+
 1. make cassandra image
 2. make cassandra container from the image
 3. Start the cassandra-contaier
 4. copy .csv file to cassandra contaier
-        miniProject$ sudo docker cp Country.csv cassandra-test:/home/Country.csv
-        miniProject$ sudo docker cp Global.csv cassandra-test:/home/Global.csv
+        miniProject$ sudo docker cp Country.csv cassandra-cont:/home/Country.csv
+        miniProject$ sudo docker cp Global.csv cassandra-cont:/home/Global.csv
 
 DESC conv19
 
