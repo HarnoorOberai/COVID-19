@@ -48,4 +48,9 @@ FROM '/home/Country.csv' WITH HEADER=TRUE;
 
 git clone https://github.com/HarnoorOberai/CloudComputingMiniProject.git
 cd CloudComputingMiniProject/
+sudo docker build . --tag=miniproject:v1
+sudo docker run -p -d 443:443 miniproject:v1
+
+open where your app is running at ec2instance:443/. remember to add https infront of the url.
+If you are using MAC open the link click on the background and type "thisisunsafe". SSL security. Other browser proceed anyways.
 

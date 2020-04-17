@@ -1,11 +1,13 @@
 //post request
-curl -i -H "Content-Type: application/json" -X POST -d '{"Country":"Test Country","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' http://0.0.0.0:80/summary/country
+curl -i -k -H "Content-Type: application/json" -X POST -d '{"Country":"TestCountry","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' https://0.0.0.0:443/summary/country
 
 //put
-curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewDeaths":101,"NewRecovered":101,"TotalConfirmed":101,
-"TotalDeaths":101,"TotalRecovered":101}' http://0.0.0.0:80/summary/country/Test%20Country
+curl -i -k -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewDeaths":101,"NewRecovered":101,"TotalConfirmed":101,
+"TotalDeaths":101,"TotalRecovered":101}' https://0.0.0.0:443/summary/country/TestCountry
 
 //
-curl -X DELETE http://0.0.0.0:80/summary/country/Test%20Country
+curl -k -X DELETE https://0.0.0.0:443/summary/country/TestCountry
 
-curl -v http://0.0.0.0:80//summary/country/China
+curl -k -v https://0.0.0.0:443/summary/country/China
+
+https://0.0.0.0:443/
