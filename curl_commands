@@ -1,5 +1,6 @@
 //post request
-curl -i -k -H "Content-Type: application/json" -X POST -d '{"Country":"TestCountry","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' https://0.0.0.0:443/summary/country
+curl -i -k -H "Content-Type: application/json" -X POST -d '{"Country":"TestCountry","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,
+"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' https://0.0.0.0:443/summary/country
 
 //put
 curl -i -k -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewDeaths":101,"NewRecovered":101,"TotalConfirmed":101,
