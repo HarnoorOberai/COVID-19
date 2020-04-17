@@ -8,6 +8,16 @@ The coronavirus COVID-19 is affecting 210 countries and territories around the w
 You can check the external APIs and in-built rest services to read, add, update and delete (CRUD) the status of deaths, recovery of patients suffering from COVID -19.
 
 ---
+## Features:
+
+1. REST-based service interface.
+2. Interaction with external REST services.
+3. Use of on an external Cloud database(cassandra db) for persisting information. 
+4. Support for cloud scalability, deployment in a container environment.
+5. Cloud security awareness by running my flask application over HTTPS Using self-signed certificate.
+6. Request followup orchestration using HATEOAS.
+
+---
 
 ## Terminal Commands
 
