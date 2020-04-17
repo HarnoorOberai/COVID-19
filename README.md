@@ -15,31 +15,31 @@ You can check the external APIs and in-built rest services to read, add, update 
 
 ### External API
 
-##### GET `1. @app.route('/summary')`
+##### *GET* `1. @app.route('/summary')`
 Get the summary of all the countries and global stats
 
-##### GET `2. @app.route('/summary/globalByExternalAPI')`
+##### *GET*  `2. @app.route('/summary/globalByExternalAPI')`
 Get the global stats
 
-##### GET `3. @app.route('/summary/countryByExternalAPI')`
+##### *GET*  `3. @app.route('/summary/countryByExternalAPI')`
 Get the summary of all the countries  stats
 
 ---
 ### REST-based Service Interface
 
-#### GET `1. @app.route('/summary/globalByBrowser')`
+#### *GET*  `1. @app.route('/summary/globalByBrowser')`
 
 Get the global stats from cassandra db:
 
-#### GET `2. @app.route('/summary/countryByBrowser)`
+#### *GET*  `2. @app.route('/summary/countryByBrowser')`
 
 Get the all the countries stats from cassandra db:
 
-#### GET `3. @app.route('/summary/country/<name>',`
+#### *GET*  `3. @app.route('/summary/country/<name>'),`
 
 Get the stats of a particular country:
 
-#### POST `4. @app.route('/summary/country')`
+#### *POST*  `4. @app.route('/summary/country')`
 
 To add a new country to the database:
 
@@ -59,7 +59,7 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"Country":"Test Country
 ```
 ----
 
-#### PUT `5. @app.route('/summary/country/<name>')`
+#### *PUT* `5. @app.route('/summary/country/<name>')`
 
 Update a the contents of a country:
 
@@ -79,7 +79,7 @@ curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewD
 "TotalDeaths":101,"TotalRecovered":101}' http://0.0.0.0:80/summary/country/TestCountry
 ```
 
-#### DELETE `6. @app.route('/summary/country/<name>')`
+#### *DELETE* `6. @app.route('/summary/country/<name>')`
 
 Delete a country:
 
