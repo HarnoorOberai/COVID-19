@@ -99,6 +99,68 @@ This is a delete request and will be executed in the following way. In the follo
 curl -X DELETE http://0.0.0.0:80/summary/country/TestCountry
 ```
 
+---
+
+
+### Deployment
+
+#### Cassandra Container 
+
+1.- Run cassandra in a Docker container and expose port 9042:
+```
+sudo docker run --name cassandra-cont -p 9042:9042 -d cassandra
+```
+
+2.- Access the cassandra container in iterative mode:
+```
+sudo docker exec -it cassandra-cont cqlsh
+```
+
+3.- Create a dedicated keyspace inside cassandra for the gym database:
+
+```
+CREATE KEYSPACE conv19 WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
+```
+
+4.- Create the database table for the country:
+```
+CREATE TABLE conv19.country (
+    Country text PRIMARY KEY,
+    CountryCode text,
+    Date timestamp,
+    NewConfirmed int,
+    NewDeaths int,
+    NewRecovered int,
+    Slug text,
+    TotalConfirmed int,
+    TotalDeaths int,
+    TotalRecovered int
+) ;
+```
+5.- Create the database table for the global stats: 
+```
+CREATE TABLE conv19.global (
+    id int PRIMARY KEY,
+    newconfirmed counter,
+    newdeaths counter,
+    newrecovered counter,
+    totalconfirmed counter,
+    totaldeaths counter,
+    totalrecovered counter
+);
+
+```
+6.- Copy the contents of Global.csv file to conv19.global table
+```
+COPY conv19.global(ID,NewConfirmed,NewDeaths,NewRecovered,TotalConfirmed,TotalDeaths,TotalRecovered)
+FROM '/Users/harnooroberai/Data_Science/Git/MiniProject/CloudComputingMiniProject/Global.csv' WITH HEADER=TRUE;
+```
+
+7.- Copy the contents of Country.csv file to conv19.global table
+```
+COPY conv19.Country(Country,CountryCode,Date, NewConfirmed, NewDeaths, NewRecovered, Slug, TotalConfirmed, TotalDeaths, TotalRecovered)
+FROM '/Users/harnooroberai/Data_Science/Git/MiniProject/CloudComputingMiniProject/Country.csv' WITH HEADER=TRUE;
+```
 
 ## Licenese and copyright
 @HARNOOR SINGH OBERAI, Queen Mary University of London
