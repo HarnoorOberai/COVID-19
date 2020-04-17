@@ -65,7 +65,8 @@ The user must provide:
 
 This is a post request and will be executed in the following way. In the following curl command I am using a country as "TestCountry" to be added in the data base.
 ```
-curl -i -H "Content-Type: application/json" -X POST -d '{"Country":"Test Country","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' http://0.0.0.0:80/summary/country
+curl -i -k -H "Content-Type: application/json" -X POST -d '{"Country":"TestCountry","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,
+"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' https://0.0.0.0:443/summary/country
 ```
 ----
 
@@ -85,8 +86,8 @@ The user must provide:
 This is a put request and will be executed in the following way. In the following curl command I am using a country as "TestCountry" to be updated in the data base.
 
 ```
-curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewDeaths":101,"NewRecovered":101,"TotalConfirmed":101,
-"TotalDeaths":101,"TotalRecovered":101}' http://0.0.0.0:80/summary/country/TestCountry
+curl -i -k -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewDeaths":101,"NewRecovered":101,"TotalConfirmed":101,
+"TotalDeaths":101,"TotalRecovered":101}' https://0.0.0.0:443/summary/country/TestCountry
 ```
 
 #### *DELETE* `6. @app.route('/summary/country/<name>')`
@@ -96,7 +97,7 @@ Delete a country:
 This is a delete request and will be executed in the following way. In the following curl command I am using a country as "TestCountry" to be deleted in the data base.
 
 ```
-curl -X DELETE http://0.0.0.0:80/summary/country/TestCountry
+curl -k -X DELETE https://0.0.0.0:443/summary/country/TestCountry
 ```
 
 ---
@@ -104,27 +105,55 @@ curl -X DELETE http://0.0.0.0:80/summary/country/TestCountry
 
 ### Deployment
 
-#### Cassandra Container 
+0.- Inital Steps
+```
+sudo apt update
+sudo apt install docker.io
+sudo docker pull cassandra:latest
+```
 
 1.- Run cassandra in a Docker container and expose port 9042:
 ```
 sudo docker run --name cassandra-cont -p 9042:9042 -d cassandra
 ```
 
-2.- Access the cassandra container in iterative mode:
+2.- Download Global.csv and Country.csv file
+```
+wget https://raw.githubusercontent.com/HarnoorOberai/CloudComputingMiniProject/master/Global.csv
+wget https://raw.githubusercontent.com/HarnoorOberai/CloudComputingMiniProject/master/Country.csv
+```
+
+3.- Puting your data inside cassandra-cont
+```
+sudo docker cp Global.csv cassandra-cont:/home/Global.csv
+sudo docker cp Country.csv cassandra-cont:/home/Country.csv
+```
+
+4.- Access the cassandra container in iterative mode:
 ```
 sudo docker exec -it cassandra-cont cqlsh
 ```
 
 3.- Create a dedicated keyspace inside cassandra for the gym database:
+```
+cqlsh> CREATE KEYSPACE conv19 WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
+```
 
+4.- Create the database table for the global stats:
 ```
-CREATE KEYSPACE conv19 WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
+cqlsh> CREATE TABLE conv19.global (
+    id int PRIMARY KEY,
+    newconfirmed counter,
+    newdeaths counter,
+    newrecovered counter,
+    totalconfirmed counter,
+    totaldeaths counter,
+    totalrecovered counter
+);
 ```
-
-4.- Create the database table for the country:
+5.- Create the database table for country: 
 ```
-CREATE TABLE conv19.country (
+cqlsh> CREATE TABLE conv19.country (
     Country text PRIMARY KEY,
     CountryCode text,
     Date timestamp,
@@ -136,30 +165,34 @@ CREATE TABLE conv19.country (
     TotalDeaths int,
     TotalRecovered int
 ) ;
-```
-5.- Create the database table for the global stats: 
-```
-CREATE TABLE conv19.global (
-    id int PRIMARY KEY,
-    newconfirmed counter,
-    newdeaths counter,
-    newrecovered counter,
-    totalconfirmed counter,
-    totaldeaths counter,
-    totalrecovered counter
-);
 
 ```
-6.- Copy the contents of Global.csv file to conv19.global table
+6.- Copy the contents of Global.csv and Country.csv to conv19.global and conv19.country table respectively.
 ```
-COPY conv19.global(ID,NewConfirmed,NewDeaths,NewRecovered,TotalConfirmed,TotalDeaths,TotalRecovered)
-FROM '/Users/harnooroberai/Data_Science/Git/MiniProject/CloudComputingMiniProject/Global.csv' WITH HEADER=TRUE;
+cqlsh> COPY conv19.global(ID,NewConfirmed,NewDeaths,NewRecovered,TotalConfirmed,TotalDeaths,TotalRecovered)
+FROM '/home/Global.csv' WITH HEADER=TRUE;
+
+cqlsh> COPY conv19.Country(Country,CountryCode,Date, NewConfirmed, NewDeaths, NewRecovered, Slug, TotalConfirmed, TotalDeaths, TotalRecovered)
+FROM '/home/Country.csv' WITH HEADER=TRUE;
 ```
 
-7.- Copy the contents of Country.csv file to conv19.global table
+---
+### Execution
+
 ```
-COPY conv19.Country(Country,CountryCode,Date, NewConfirmed, NewDeaths, NewRecovered, Slug, TotalConfirmed, TotalDeaths, TotalRecovered)
-FROM '/Users/harnooroberai/Data_Science/Git/MiniProject/CloudComputingMiniProject/Country.csv' WITH HEADER=TRUE;
+git clone https://github.com/HarnoorOberai/CloudComputingMiniProject.git
+cd CloudComputingMiniProject/
+sudo docker build . --tag=miniproject:v1
+sudo docker run -p -d 443:443 miniproject:v1
+```
+
+` Remember to add https infront of the url.`
+
+---
+
+### Bugs and their resolution:
+```
+If you are using MAC open the link click on the background and type "thisisunsafe". Other browser proceed anyways.
 ```
 
 ## Licenese and copyright
