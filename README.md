@@ -9,22 +9,23 @@ You can check the external APIs and in-built rest services to read, add, update 
 
 ### Terminal Commands
 
+
 #### External API
 
-###### 1. @app.route('/summary')
+###### `1. @app.route('/summary')`
 Get the summary of all the countries and global stats
 
-###### 2. @app.route('/summary/globalByExternalAPI')
+###### `2. @app.route('/summary/globalByExternalAPI')`
 Get the global stats
 
-###### 3. @app.route('/summary/countryByExternalAPI')
+###### `3. @app.route('/summary/countryByExternalAPI')`
 Get the summary of all the countries  stats
 
 
 
 #### To add a new country to the database:
 
-@app.route('/summary/country')
+`@app.route('/summary/country')`
 
 The user must provide:
 * Country
@@ -43,10 +44,9 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"Country":"Test Country
 
 #### Update a the contents of a country:
 
-@app.route('/summary/country/<name>')
+`@app.route('/summary/country/<name>')`
 
 The user must provide:
-* Country
 * CountryCode
 * NewConfirmed
 * NewDeaths
@@ -64,7 +64,7 @@ curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewD
 
 #### Delete a country:
 
-@app.route('/summary/country/<name>')
+`@app.route('/summary/country/<name>')`
 
 This is a delete request and will be executed in the following way. In the following curl command I am using a country as "TestCountry" to be deleted in the data base.
 
