@@ -7,25 +7,41 @@ The coronavirus COVID-19 is affecting 210 countries and territories around the w
 
 You can check the external APIs and in-built rest services to read, add, update and delete (CRUD) the status of deaths, recovery of patients suffering from COVID -19.
 
-### Terminal Commands
+---
 
+## Terminal Commands
 
-#### External API
+---
 
-###### `1. @app.route('/summary')`
+### External API
+
+##### GET `1. @app.route('/summary')`
 Get the summary of all the countries and global stats
 
-###### `2. @app.route('/summary/globalByExternalAPI')`
+##### GET `2. @app.route('/summary/globalByExternalAPI')`
 Get the global stats
 
-###### `3. @app.route('/summary/countryByExternalAPI')`
+##### GET `3. @app.route('/summary/countryByExternalAPI')`
 Get the summary of all the countries  stats
 
+---
+### REST-based Service Interface
 
+#### GET `1. @app.route('/summary/globalByBrowser')`
 
-#### To add a new country to the database:
+Get the global stats from cassandra db:
 
-`@app.route('/summary/country')`
+#### GET `2. @app.route('/summary/countryByBrowser)`
+
+Get the all the countries stats from cassandra db:
+
+#### GET `3. @app.route('/summary/country/<name>',`
+
+Get the stats of a particular country:
+
+#### POST `4. @app.route('/summary/country')`
+
+To add a new country to the database:
 
 The user must provide:
 * Country
@@ -41,10 +57,11 @@ This is a post request and will be executed in the following way. In the followi
 ```
 curl -i -H "Content-Type: application/json" -X POST -d '{"Country":"Test Country","CountryCode":"TC","NewConfirmed":3843,"NewDeaths":442,"NewRecovered":58,"TotalConfirmed":52279,"TotalDeaths":5385,"TotalRecovered":287}' http://0.0.0.0:80/summary/country
 ```
+----
 
-#### Update a the contents of a country:
+#### PUT `5. @app.route('/summary/country/<name>')`
 
-`@app.route('/summary/country/<name>')`
+Update a the contents of a country:
 
 The user must provide:
 * CountryCode
@@ -62,9 +79,9 @@ curl -i -H "Content-Type: application/json" -X PUT -d '{"NewConfirmed":101,"NewD
 "TotalDeaths":101,"TotalRecovered":101}' http://0.0.0.0:80/summary/country/TestCountry
 ```
 
-#### Delete a country:
+#### DELETE `6. @app.route('/summary/country/<name>')`
 
-`@app.route('/summary/country/<name>')`
+Delete a country:
 
 This is a delete request and will be executed in the following way. In the following curl command I am using a country as "TestCountry" to be deleted in the data base.
 
@@ -72,6 +89,6 @@ This is a delete request and will be executed in the following way. In the follo
 curl -X DELETE http://0.0.0.0:80/summary/country/TestCountry
 ```
 
----
+
 ## Licenese and copyright
 @HARNOOR SINGH OBERAI, Queen Mary University of London
