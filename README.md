@@ -222,10 +222,9 @@ Adding the ceritficate will add security to our app and will now use *https*.
 ### Execution
 
 ```
-git clone https://github.com/HarnoorOberai/CloudComputingMiniProject.git
 cd CloudComputingMiniProject/
 sudo docker build . --tag=miniproject:v1
-sudo docker run -p -d 443:443 miniproject:v1
+sudo docker run -dp 443:443 miniproject:v1
 ```
 
 ` Remember to add https infront of the url.`
