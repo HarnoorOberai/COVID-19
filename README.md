@@ -134,7 +134,7 @@ sudo docker cp Country.csv cassandra-cont:/home/Country.csv
 sudo docker exec -it cassandra-cont cqlsh
 ```
 
-3.- Create a dedicated keyspace inside cassandra for the gym database:
+3.- Create a dedicated keyspace inside cassandra for the covid19 database:
 ```
 cqlsh> CREATE KEYSPACE conv19 WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
 ```
